@@ -1,0 +1,39 @@
+//Cryptocurrency Converter
+//Anjiya Akber
+//02/09/2026
+//Description - Converting users input (in whole numbers) to cryptocurrency of Ethereum and Bitcoin 
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main()
+{
+    const double ETH_PER_DOLLAR = 0.00053;
+    const double BTC_PER_DOLLAR = 0.000016;
+    
+    int dollars;
+    
+    cout << "Please enter a dollar amount to convert into Ethereum and Bitcoin (whole number):" << endl;
+    cin >> dollars;
+    
+    cout << endl; 
+    
+    double ETH_AMOUNT = dollars * ETH_PER_DOLLAR;
+    double BTC_AMOUNT = dollars * BTC_PER_DOLLAR;
+    
+    cout << fixed << setprecision(6);
+    
+    cout << "Using the conversion rates of " << ETH_PER_DOLLAR << " Ethereum per dollar" << endl;
+    cout << "and " << BTC_PER_DOLLAR << " Bitcoin per dollar: " << endl;
+    
+    cout << endl;
+    
+    cout << fixed << setprecision(4);
+    
+    cout << dollars << " dollars = " << ETH_AMOUNT << " Ethereum." << endl;
+    cout << dollars << " dollars = " << BTC_AMOUNT << " Bitcoin." << endl;
+    
+    return 0;
+}
