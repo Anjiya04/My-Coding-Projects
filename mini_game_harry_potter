@@ -1,0 +1,88 @@
+//Harry Potter Battle
+//Anjiya Akber
+//02/19/2026
+//Harry Potter's gonna fight some creatures, and if he survives or not is up for you to choose
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main()
+{
+    //Creatures and their damage
+    const int CORNISH_PIXIE = 20;
+    const int GNOME = 40;
+    const int BASILISK = 70;
+    const int DRAGON = 90;
+    
+    //starting health
+    int starting_health;
+    int choice;
+    int remaining_health;
+    
+    //Person chooses starting_health
+    cout << "Harry Potter is being attacked!" << endl;
+    cout << "How much health should he start with? (1-100):" << endl;
+    cin >> starting_health;
+    
+    if (starting_health < 1 or starting_health > 100)
+    {
+        cout << "Enter a value between 1 to 100!" << endl;
+        return 0;
+    }
+    
+    //Person chooses creature
+    cout << "What creature is attacking? " << endl;
+    cout << "1. Cornish pixie" << endl;
+    cout << "2. Gnome" << endl;
+    cout << "3. Basilisk " << endl;
+    cout << "4. Dragon " << endl;
+    cout << "Enter your choice: ";
+    cin >> choice;
+    
+    //If he survives or not (battle)
+    if (choice == 1)
+    {
+        remaining_health = starting_health - CORNISH_PIXIE;
+        cout << "Harry is attacked by a Cornish Pixie which deals " << CORNISH_PIXIE << " damage." << endl;
+    }    
+    
+    
+    else if (choice == 2)
+    {
+        remaining_health = starting_health - GNOME;
+        cout << "Harry is attacked by a Gnome which deals " << GNOME << " damage." << endl;
+    }
+    
+    
+    else if (choice == 3)
+    {
+        remaining_health = starting_health - BASILISK;
+        cout << "Harry is attacked by a Basilisk which deals " << BASILISK << " damage." << endl;
+    }
+    
+    
+    else if (choice == 4)
+    {
+        remaining_health = starting_health - DRAGON;
+        cout << "Harry is attacked by a Dragon which deals " << DRAGON << " damage." << endl;
+    }
+    else
+    {
+        cout << "Invalid choice!" << endl;
+        return 0;
+    }
+    
+    //Harry's remaining health
+    cout << "Harry ends with " << remaining_health << " health." << endl;
+    
+    //Does he win or lose
+    if (remaining_health > 0)
+        cout << "He survives!" << endl;
+    else
+        cout << "Oh no...he didn't make it." << endl;
+
+    return 0;
+    
+}
