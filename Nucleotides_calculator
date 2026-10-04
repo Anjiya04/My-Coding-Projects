@@ -1,0 +1,56 @@
+///User provides a gene sequence for covid 19, and we will do an analysis on it
+///Anjiya Akber
+///03/23/2026
+
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    /// varaiables for nucleotides
+    int adenine = 0;
+    int thymine = 0;
+    int cytosine = 0;
+    int guanine = 0;
+    int total = 0;
+    
+    ///use the file and read it
+    ifstream inFile;
+    inFile.open("covid_19_sequence.txt");
+    
+    ///Read how many of the pairs of the nucleotides there are
+    char nucleotide;
+    while (inFile >> nucleotide) {
+        if (nucleotide == 'A')
+            adenine++;
+        else if (nucleotide == 'T')
+            thymine++;
+        else if (nucleotide == 'C')
+            cytosine++;
+        else if (nucleotide == 'G')
+            guanine++;
+        total++;
+    }
+    
+    inFile.close();
+    
+    ///Percentages of each
+    double percentA = (adenine * 100.00) / total;
+    double percentT = (thymine * 100.00) / total;
+    double percentC = (cytosine * 100.00) / total;
+    double percentG = (guanine * 100.00) / total;
+    
+    ///How much of each nucleotides there are and Percentages
+    cout << fixed << setprecision(2);
+    cout << "COVID-19 sequence analysis: " << endl;
+    cout << total << " nucleotides in the sequence." << endl;
+    cout << "Sequence breakdown: " << endl;
+    cout << "A: " << adenine << " " << percentA << "%" << endl;
+    cout << "T: " << thymine << " " << percentT << "%" << endl;
+    cout << "C: " << cytosine << " " << percentC << "%" << endl;
+    cout << "G: " << guanine << " " << percentG << "%" << endl;
+    
+    return 0;
+    
+}
