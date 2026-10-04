@@ -1,0 +1,87 @@
+/* Anjiya Akber
+   September 3, 2026
+   Section MW
+*/
+
+/** 
+*This is a game called Kitchen Madness where the player is 
+*a chef, and he has to finish dinner before his restaurant opens. *He must overcome 3 kitchen-based obstacles using 3 food items.
+*/
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+    Random random = new Random();
+
+    //3 items for obstacles
+    final int KNIFE = 1;
+    final int POT = 2;
+    final int SEASONING = 3;
+
+    //kitchen variables
+    int health = 5;
+    int obstacle = 1;
+
+    System.out.println("Welcome to Kitchen Madness");
+    System.out.println("You have 5 health points to finish dinner!\n");
+
+    while (obstacle <= 3 && health > 0) {
+
+      System.out.println("Health - " + health);
+
+      if (obstacle == 1) {
+        System.out.println("There is a potato man blocking your kitchen!");
+          System.out.println("You need to get rid of him!");
+          }
+      else if (obstacle == 2) {
+        System.out.println("There's a dry bowl of ramen!");
+        System.out.println("Pour some hot water in it!");
+      }
+      else {
+        System.out.println("Your meat sauce tastes like toilet water!");
+        System.out.println("Please put some seasoning on that!");
+      }
+
+      //Randomized choices
+      int item  = random.nextInt(3)+1;
+
+      if (obstacle == 1 && item == KNIFE) {
+        System.out.println("You used the knife!");
+        System.out.println("You cut him up and made him into some fries!");
+        obstacle++;
+      }
+      else if (obstacle == 2 && item == POT) {
+        System.out.println("You used the pot!");
+        System.out.println("You made some yummy ramen!!");
+        obstacle++;
+      }
+      else if (obstacle == 3 && item == SEASONING) {
+        System.out.println("You used some seasoning thank god!");
+        System.out.println("Now your meat sauce actually tastes good!");
+        obstacle++;
+      }
+      else {
+        System.out.println("Wrong item! You lost 1 health.");
+        health--;
+      }
+
+      System.out.println();
+    }
+   if (health > 0) {
+            System.out.println("You finished all three obstacles!");
+            System.out.println("The restaurant is open!");
+            System.out.println("YOU WIN!");
+        }
+        else {
+            System.out.println("You ran out of health!");
+            System.out.println("The restaurant has to close.");
+            System.out.println("GAME OVER!");
+        }
+
+        input.close();
+    }
+}
