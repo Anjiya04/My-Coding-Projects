@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+
+public class Main{
+    public static void main(String[] args){
+       
+        Scanner input = new Scanner(System.in);
+
+
+        System.out.println("Name: Anjiya Akber");
+
+
+        System.out.print("Enter the first number - ");
+        double num1 = input.nextDouble();
+
+
+        System.out.print("Enter a second number - ");
+        double num2 = input.nextDouble();
+
+
+        System.out.print("Enter a third number - ");
+        double num3 = input.nextDouble();
+
+
+        double sum = num1 / num2 + num3;
+
+
+        System.out.println();
+        System.out.println(num1 + " / " + num2 + " + " + num3 + " = " + sum);
+
+
+        input.close();
+
+
+    }
+}
